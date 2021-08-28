@@ -98,7 +98,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1번 포인트 -> 1-1번 통과지점
@@ -109,7 +109,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-1번 통과지점 -> 1-2번 통과지점
@@ -120,7 +120,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-2번 통과지점 -> 1-3번 통과지점
@@ -131,7 +131,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-3번 통과지점 -> 1-4번 통과지점
@@ -142,7 +142,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-4번 통과지점 -> 1-5번 통과지점
@@ -153,7 +153,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-5번 통과지점 -> 1-6번 통과지점
@@ -164,7 +164,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-6번 통과지점 -> 1-7번 통과지점
@@ -175,7 +175,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-7번 통과지점 -> 1-8번 통과지점
@@ -186,7 +186,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-8번 통과지점 -> 1-9번 통과지점
@@ -197,7 +197,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 1-9번 통과지점 -> 2번 포인트
@@ -208,7 +208,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2번 포인트 -> 2-1번 통과지점
@@ -219,7 +219,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-1번 통과지점 -> 2-2번 통과지점
@@ -230,7 +230,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-2번 통과지점 -> 2-3번 통과지점
@@ -241,7 +241,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-3번 통과지점 -> 2-4번 통과지점
@@ -252,7 +252,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-4번 통과지점 -> 2-5번 통과지점
@@ -263,7 +263,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-5번 통과지점 -> 2-6번 통과지점
@@ -274,7 +274,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-6번 통과지점 -> 2-7번 통과지점
@@ -285,7 +285,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 % 2-7번 통과지점 -> 3번 포인트
@@ -296,7 +296,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
 pause(0.5)
 
 
