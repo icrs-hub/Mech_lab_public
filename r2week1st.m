@@ -82,7 +82,7 @@ pause(1)
 t = linspace(1,60,60);
 w = 2*pi/numel(t);
 % Home Position의 XYZ좌표는 (0,-191.45,1000)
-%% (예제 내용) Tool 좌표계 +X, +Y, +Z축을 Base의 -X, -Z, -Y축에 정렬,
+%% (예제 내용) Tool 좌표계 +xT, +yT, +zT축을 Base의 -X, -Z, -Y축에 정렬,
 %	Vx=50*sin(w*t), Vy=50*sin(w*t)에서 적분
 
 for count = t
