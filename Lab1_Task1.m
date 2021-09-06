@@ -77,7 +77,11 @@ simObj.FrameT(2,4)=[0];  % End-effector Frame부터의 Tool의 Y위치 [mm]
 simObj.FrameT(3,4)=[0];  % End-effector Frame부터의 Tool의 Z위치 [mm]
 grid()
 drawnow
-ToolPoseArray = [-1 0 0 0; 0 0 -1 -191.45; 0 -1 0 1000; 0 0 0 1];
+T_home=simObj.Pose;
+ToolPoseArray = [-1  0   0      0; 
+                  0  0  -1 -191.45; 
+                  0 -1   0    1000; 
+                  0  0   0       1]; % Home pose
 pause(1)
 
 % Home Position의 XYZ좌표는 (0,-191.45,1000)
@@ -97,7 +101,7 @@ pause(1)
 % 본 코드를 자신의 노력으로 완료하였음을 확인함: 본인이름
 %=============================================
 
-% 1번 포인트 x축에서 2번 좌표 (-500, -191.45, 675)
+% P1 좌표 (-500, -191.45, 675)
 x = -500;
 y = -191.45;
 z = 675;
@@ -105,8 +109,22 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
+
+% Add some information in the plot
+
+% The orgin of Tool relative to the reference
+plot3(x, y, z, 'kx');
+
+% Text_center_pos= append("The center of the circle : ", int2str([Xc Yc Zc]));
+Text_center_pos= "P1 (x) = "+ "[ " + int2str([x y z])+ " ] mm";
+% Text_z_axisTool= "Rotation angle [\theta_X, \theta_Y, \theta_Z] = [" + string(thX) +", " + string(thY) + ", " + string(thZ) + " ] rad";  
+Text_z_axisTool= "Rotation angle is the same as the Home pose";  
+
+text(x, y, z+50, Text_center_pos);
+text(x, y, z+500, Text_z_axisTool);
+
 
 % 1번 포인트 -> 1-1번 통과지점
 x = -505;
@@ -116,7 +134,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-1번 통과지점 -> 1-2번 통과지점
@@ -127,7 +145,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-2번 통과지점 -> 1-3번 통과지점
@@ -138,7 +156,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-3번 통과지점 -> 1-4번 통과지점
@@ -149,7 +167,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-4번 통과지점 -> 1-5번 통과지점
@@ -160,7 +178,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-5번 통과지점 -> 1-6번 통과지점
@@ -171,7 +189,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-6번 통과지점 -> 1-7번 통과지점
@@ -182,7 +200,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-7번 통과지점 -> 1-8번 통과지점
@@ -193,7 +211,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-8번 통과지점 -> 1-9번 통과지점
@@ -204,7 +222,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 1-9번 통과지점 -> 2번 포인트
@@ -215,8 +233,19 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
+
+% The orgin of Tool relative to the reference
+plot3(x, y, z, 'ko');
+
+% Text_center_pos= append("The center of the circle : ", int2str([Xc Yc Zc]));
+Text_center_pos= "P2 (O) = "+ "[ " + int2str([x y z])+ " ] mm";
+% Text_z_axisTool= "Rotation angle [\theta_X, \theta_Y, \theta_Z] = [" + string(thX) +", " + string(thY) + ", " + string(thZ) + " ] rad";  
+% Text_z_axisTool= "Rotation angle is the same as the Home pose";  
+
+text(x+100, y+100, z+300, Text_center_pos);
+% text(x, y, z+80, Text_z_axisTool);
 
 % 2번 포인트 -> 2-1번 통과지점
 x = -543.75;
@@ -226,7 +255,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-1번 통과지점 -> 2-2번 통과지점
@@ -237,7 +266,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-2번 통과지점 -> 2-3번 통과지점
@@ -248,7 +277,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-3번 통과지점 -> 2-4번 통과지점
@@ -259,7 +288,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-4번 통과지점 -> 2-5번 통과지점
@@ -270,7 +299,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-5번 통과지점 -> 2-6번 통과지점
@@ -281,7 +310,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-6번 통과지점 -> 2-7번 통과지점
@@ -292,7 +321,7 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
 % 2-7번 통과지점 -> 3번 포인트
@@ -303,11 +332,19 @@ ToolPoseArray(1,4) = x;
 ToolPoseArray(2,4) = y;
 ToolPoseArray(3,4) = z;
 simObj.ToolPose = ToolPoseArray;
-plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'-o','Color','b');
+plt_Waypoints = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'k.');
 pause(0.5)
 
+% The orgin of Tool relative to the reference
+plot3(x, y, z, 'k>');
 
+% Text_center_pos= append("The center of the circle : ", int2str([Xc Yc Zc]));
+Text_center_pos= "P3 (>) = "+ "[ " + int2str([x y z])+ " ] mm";
+% Text_z_axisTool= "Rotation angle [\theta_X, \theta_Y, \theta_Z] = [" + string(thX) +", " + string(thY) + ", " + string(thZ) + " ] rad";  
+% Text_z_axisTool= "Rotation angle is the same as the Home pose"; 
 
+text(x+150, y+150, z+400, Text_center_pos);
+% text(x, y, z+80, Text_z_axisTool);
 
 simObj.Joints()
 simObj.ToolPose()
