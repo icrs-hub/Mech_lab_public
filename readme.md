@@ -2,4 +2,6 @@
 
 1주차 실습2 - Lab1_Task2.m (이름 경로 생성)
 
-2주차 실습 - Lab2.m
+2주차 실습1 - Lab2.m
+
+2주차 실습2 - Lab2_DrawCircle.m
