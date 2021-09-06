@@ -1,5 +1,5 @@
-1주차 1차시 - r1week1st.m (3 point 움직이기)
+1주차 실습1 - Lab1_Task1.m (주어진 3 points를 이용한 직선 경로 생성)
 
-1주차 2차시 - r1week2nd.m (이름 그리기)
+1주차 실습2 - Lab1_Task2.m (이름 경로 생성)
 
-2주차 1차시 - r2week1st.m
+2주차 실습 - Lab2.m
