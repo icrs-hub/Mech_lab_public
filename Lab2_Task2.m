@@ -27,7 +27,8 @@ if ~exist('simObj')
     simObj.Initialize;
     % Set a tool frame offset (e.g. for Robotiq end-effector not shown in
     % visualization)
-    %     simObj.FrameT = Tz(160);
+%     simObj.FrameT = Tz(160);
+     simObj.FrameT = Tz(0);
     
     % Hide frames
     frames = '0123456E';
@@ -74,9 +75,9 @@ end
 % Home simulation
 simObj.Home;
 
-simObj.FrameT(1,4)=[0];  % End-effector Frame부터의 Tool의 X위치 [mm]
-simObj.FrameT(2,4)=[0];  % End-effector Frame부터의 Tool의 Y위치 [mm]
-simObj.FrameT(3,4)=[0];  % End-effector Frame부터의 Tool의 Z위치 [mm]
+% simObj.FrameT(1,4)=[0];  % End-effector Frame부터의 Tool의 X위치 [mm]
+% simObj.FrameT(2,4)=[0];  % End-effector Frame부터의 Tool의 Y위치 [mm]
+% simObj.FrameT(3,4)=[0];  % End-effector Frame부터의 Tool의 Z위치 [mm]
 grid()
 drawnow
 ToolPoseArray = [-1 0 0 0; 0 0 -1 -191.45; 0 -1 0 1000; 0 0 0 1];
@@ -98,15 +99,26 @@ pause(1)
 % P2=[100, 200, 200];   % P = [x, y, z] for P2
 % P3=[400  600  100];   % P = [x, y, z] for P3
 
-P1=[500, 500, 500];
+% P1=[300, 400, 300];
+% P2=[200, 300, 500];
+% P3=[100  200  300];
+
+
+P1=[400, 500, 400];
 P2=[200, 300, 600];
 P3=[100  200  400];
 
 
 % Tool Orientation Angles used in Rotational Transformation Matrix relative to the reference
-th_P1 = [0, 0, 0]; % th_P = [thX, thY. thZ] for P1
-th_P3 = [pi/2, pi/2, 0]; % th_P = [thX, thY. thZ] for P3
-th_P2 = (th_P1+th_P3)/2; % th_P = [thX, thY. thZ] for P2
+% th_P1 = [0, 0, 0]; % th_P = [thX, thY. thZ] for P1
+% th_P3 = [pi/2, pi/2, 0]; % th_P = [thX, thY. thZ] for P3
+% th_P2 = (th_P1+th_P3)/2; % th_P = [thX, thY. thZ] for P2
+
+th_P1 = [pi/2, 0, 0]; % th_P = [thX, thY. thZ] for P1
+th_P2 = [pi/2, pi/2, 0]; % th_P = [thX, thY. thZ] for P2
+th_P3 = [0, pi/2, pi/2]; % th_P = [thX, thY. thZ] for P3
+
+
 
 m=50;
 
@@ -130,7 +142,7 @@ for i=1:n
     
 %     H_cur = Tx(X(i))*Ty(Y(i))*Tz(Z(i))*Ry(pi/2)*Rx(pi/2);
 %     H_cur = Tx(X(i))*Ty(Y(i))*Tz(Z(i))*Ry(pi)*Rx(pi/2);
-    H_cur = Tx(X(i))*Ty(Y(i))*Tz(Z(i))*Rx(thX(i))*Ry(thY(i))*Rx(thZ(i));
+    H_cur = Tx(X(i))*Ty(Y(i))*Tz(Z(i))*Rx(thX(i))*Ry(thY(i))*Rz(thZ(i));
     simObj.ToolPose=H_cur;
 %     q = simObj.Joints;    
     plt_Waypoints_TaskSpace = plot3(simObj.Axes,simObj.ToolPose(1,4),simObj.ToolPose(2,4),simObj.ToolPose(3,4),'.k');
@@ -144,16 +156,16 @@ end
 
 
 % Calculate Transformation Matrix and find joint angles
-    H_p1 = Tx(P1(1))*Ty(P1(2))*Tz(P1(3))*Rx(th_P1(1))*Ry(th_P1(2))*Rx(th_P1(3));
+    H_p1 = Tx(P1(1))*Ty(P1(2))*Tz(P1(3))*Rx(th_P1(1))*Ry(th_P1(2))*Rz(th_P1(3));
     simObj.ToolPose=H_p1;
     q1=simObj.Joints;  % joint angles for P1 pose 
     
 
-    H_p2 = Tx(P2(1))*Ty(P2(2))*Tz(P2(3))*Rx(th_P2(1))*Ry(th_P2(2))*Rx(th_P2(3));
+    H_p2 = Tx(P2(1))*Ty(P2(2))*Tz(P2(3))*Rx(th_P2(1))*Ry(th_P2(2))*Rz(th_P2(3));
     simObj.ToolPose=H_p2;
     q2=simObj.Joints  % joint angles for P2 pose 
     
-    H_p3 = Tx(P3(1))*Ty(P3(2))*Tz(P3(3))*Rx(th_P3(1))*Ry(th_P3(2))*Rx(th_P3(3));
+    H_p3 = Tx(P3(1))*Ty(P3(2))*Tz(P3(3))*Rx(th_P3(1))*Ry(th_P3(2))*Rz(th_P3(3));
     simObj.ToolPose=H_p3;
     q3=simObj.Joints  % joint angles for P3 pose 
 
