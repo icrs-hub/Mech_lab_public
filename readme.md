@@ -9,4 +9,4 @@
           
 2주차 실습1 - Lab2_Task1_DrawCircle.m (원 경로 생성)
 
-2주차 실습2 - Lab2_Task2.m (Joint spacen and Task space 사용 경로 생성) 
+2주차 실습2 - Lab2_Task2.m (Joint space and Task space에서 경로 생성) 
