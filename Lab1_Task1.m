@@ -27,7 +27,7 @@ if ~exist('simObj')
     simObj.Initialize;
     % Set a tool frame offset (e.g. for Robotiq end-effector not shown in
     % visualization)
-    %     simObj.FrameT = Tz(160);
+        simObj.FrameT = Tz(160);
     
     % Hide frames
     frames = '0123456E';
@@ -72,16 +72,23 @@ end
 % Home simulation
 simObj.Home;
 
-simObj.FrameT(1,4)=[0];  % End-effector Frame부터의 Tool의 X위치 [mm]
-simObj.FrameT(2,4)=[0];  % End-effector Frame부터의 Tool의 Y위치 [mm]
-simObj.FrameT(3,4)=[0];  % End-effector Frame부터의 Tool의 Z위치 [mm]
+% simObj.FrameT(1,4)=[0];  % End-effector Frame부터의 Tool의 X위치 [mm]
+% simObj.FrameT(2,4)=[0];  % End-effector Frame부터의 Tool의 Y위치 [mm]
+% simObj.FrameT(3,4)=[0];  % End-effector Frame부터의 Tool의 Z위치 [mm]
 grid()
 drawnow
-T_home=simObj.Pose;
-ToolPoseArray = [-1  0   0      0; 
+% T_home=simObj.Pose;
+% ToolPoseArray = [-1  0   0      0; 
+%                   0  0  -1 -191.45; 
+%                   0 -1   0    1000; 
+%                   0  0   0       1]; % Home pose
+
+% Change orientation angle from the Home pose
+ToolPoseArray = [ 0  1   0      0; 
                   0  0  -1 -191.45; 
-                  0 -1   0    1000; 
+                 -1  0   0    1000; 
                   0  0   0       1]; % Home pose
+
 pause(1)
 
 % Home Position의 XYZ좌표는 (0,-191.45,1000)
@@ -120,7 +127,7 @@ plot3(x, y, z, 'kx');
 % Text_center_pos= append("The center of the circle : ", int2str([Xc Yc Zc]));
 Text_center_pos= "P1 (x) = "+ "[ " + int2str([x y z])+ " ] mm";
 % Text_z_axisTool= "Rotation angle [\theta_X, \theta_Y, \theta_Z] = [" + string(thX) +", " + string(thY) + ", " + string(thZ) + " ] rad";  
-Text_z_axisTool= "Rotation angle is the same as the Home pose";  
+Text_z_axisTool= "The tool frame is ratated from the Home pose about the fixed Y-axis by -pi/2 rad";  
 
 text(x, y, z+50, Text_center_pos);
 text(x, y, z+500, Text_z_axisTool);
