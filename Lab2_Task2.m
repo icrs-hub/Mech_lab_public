@@ -204,7 +204,7 @@ Text_z_axisTool= "Final rotation angle [\theta_X, \theta_Y, \theta_Z] = [" + str
 
 text(P1(1), P1(2), P1(3)+50, Text_P1);
 text(P2(1), P2(2), P2(3)+50, Text_P2);
-text(P3(1), P3(2)+100, P3(3)-50, Text_P2);
+text(P3(1), P3(2)+100, P3(3)-50, Text_P3);
 
 text(P3(1), P3(2)+100, P3(3)-100, Text_z_axisTool);
     
