@@ -108,7 +108,7 @@ thY=0;
 thZ=0;
 
 % Find Homogeneous Coordinate Transofrmation of the tool relatvie to the reference
-T_trans=Ty(-500)*Tz(500);  % Transformation by sequential translations 
+T_trans=Tx(Xc)*Ty(Yc)*Tz(Zc);  % Transformation by sequential translations 
 T_rot_xyz=Rx(thX)*Ry(thY)*Rz(thZ); % Transformation by sequential rotations
 T_comb=T_trans*T_rot_xyz; % Combination of sequential translation and rotations as ordered here
 
